@@ -1,11 +1,9 @@
-# BCR CRUD (Chapter 4 Challenge)
+# BCR Auth (Chapter 5 Challenge)
 
-Relational Mapping (1NF):
+## superadmin
 
-![alt text](image-2.png)
+- Email:
 
-ERD:
+- Password:
 
-![alt text](image-1.png)
-
-with love, wedens🙏🙏🙏🙏
+<!-- with love, wedens🙏🙏🙏🙏 -->
