@@ -1,13 +1,16 @@
 const express = require("express");
 const router = express.Router();
 const specController = require("../controller/spec");
+const { authMiddleware } = require("../middleware/auth");
 
-router.route("/").post(specController.createSpec);
+router
+	.route("/")
+	.post(authMiddleware(["user", "admin"]), specController.createSpec);
 
 router
 	.route("/:id")
-	.get(specController.getSpecById)
-	.put(specController.updateSpec)
-	.delete(specController.deleteSpec);
+	.get(authMiddleware(["user", "admin"]), specController.getSpecById)
+	.put(authMiddleware(["user", "admin"]), specController.updateSpec)
+	.delete(authMiddleware(["user", "admin"]), specController.deleteSpec);
 
 module.exports = router;

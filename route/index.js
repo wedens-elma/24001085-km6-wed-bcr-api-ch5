@@ -5,7 +5,9 @@ const optionRoute = require("./option");
 const specRoute = require("./spec");
 const carOptionRoute = require("./car_option");
 const carSpecRoute = require("./car_spec");
+const auth = require("./auth");
 
+router.use("/auth", auth);
 router.use("/cars", carRoute);
 router.use("/option", optionRoute);
 router.use("/spec", specRoute);
