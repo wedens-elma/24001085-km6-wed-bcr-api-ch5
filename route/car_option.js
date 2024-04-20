@@ -5,12 +5,9 @@ const { authMiddleware } = require("../middleware/auth");
 
 router
 	.route("/:id")
-	.delete(
-		authMiddleware(["user", "admin"]),
-		carOptionController.removeCarOption
-	);
+	.delete(authMiddleware(["admin"]), carOptionController.removeCarOption);
 router
 	.route("/")
-	.post(authMiddleware(["user", "admin"]), carOptionController.addCarOption);
+	.post(authMiddleware(["admin"]), carOptionController.addCarOption);
 
 module.exports = router;

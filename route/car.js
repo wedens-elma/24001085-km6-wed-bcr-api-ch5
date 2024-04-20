@@ -6,12 +6,12 @@ const { authMiddleware } = require("../middleware/auth");
 router
 	.route("/")
 	.get(authMiddleware(["user", "admin"]), carController.getAllCars)
-	.post(authMiddleware(["user", "admin"]), carController.addCar);
+	.post(authMiddleware(["admin"]), carController.addCar);
 
 router
 	.route("/:id")
 	.get(authMiddleware(["user", "admin"]), carController.getCar)
-	.put(authMiddleware(["user", "admin"]), carController.updateCar)
-	.delete(authMiddleware(["user", "admin"]), carController.deleteCar);
+	.put(authMiddleware(["admin"]), carController.updateCar)
+	.delete(authMiddleware(["admin"]), carController.deleteCar);
 
 module.exports = router;

@@ -5,12 +5,12 @@ const { authMiddleware } = require("../middleware/auth");
 
 router
 	.route("/")
-	.post(authMiddleware(["user", "admin"]), optionController.createOption);
+	.post(authMiddleware(["admin"]), optionController.createOption);
 
 router
 	.route("/:id")
 	.get(authMiddleware(["user", "admin"]), optionController.getOptionById)
-	.put(authMiddleware(["user", "admin"]), optionController.updateOption)
-	.delete(authMiddleware(["user", "admin"]), optionController.deleteOption);
+	.put(authMiddleware(["admin"]), optionController.updateOption)
+	.delete(authMiddleware(["admin"]), optionController.deleteOption);
 
 module.exports = router;
